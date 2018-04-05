@@ -25,14 +25,17 @@ class DailyBackupFunctions:
         self.BackupPathKey = 'BackupPath'
         self.DaysToPurgeKey = 'Days to purge'
 
+        self.SaveConfigFile(pathToConfigFile,
+        dataPath = "D:/CentOS_FilesPathTest/CurrentFolder",
+        backupPath = "D:/CentOS_FilesPathTest/BackUpFolder")
         self.ReadConfigFile(pathToConfigFile)
         self.CopyFiles()
 
-    def SaveConfigFile(self, filePath):
+    def SaveConfigFile(self, jsonFilePath, dataPath, backupPath):
         """
         """
-        dataPath = 'D:/CentOS_FilesPathTest/CurrentFolder'
-        backupPath = 'D:/CentOS_FilesPathTest/BackUpFolder'
+        #dataPath = 'D:/CentOS_FilesPathTest/CurrentFolder'
+        #backupPath = 'D:/CentOS_FilesPathTest/BackUpFolder'
 
         data = {
             self.DaysToPurgeKey: 5,
@@ -40,12 +43,12 @@ class DailyBackupFunctions:
             self.BackupPathKey: backupPath
             }
 
-        with open(filePath, 'w') as outfile:
+        with open(jsonFilePath, 'w') as outfile:
             json.dump(data, outfile, indent = 4, sort_keys = True)
 
-    def ReadConfigFile(self, filePath):
+    def ReadConfigFile(self, jsonFilePath):
         self.data_loaded = []
-        with open(filePath) as data_file:
+        with open(jsonFilePath) as data_file:
             self.data_loaded = json.load(data_file)
 
     def CopyFiles(self):
@@ -67,7 +70,8 @@ class DailyBackupFunctions:
                 for aE in allElements:
                     s = source + "/"+str(aE)
                     d = destination + "/"+str(aE)
-                    self.copyTree_F(source = s, destination = d)
+                    if s.count("/A_Borrar") == 0:
+                        self.copyTree_F(source = s, destination = d)
 
         else:
             if not os.path.exists(destination):
@@ -80,4 +84,4 @@ class DailyBackupFunctions:
                     copy2(source, destination)
 
 
-coreFunctions = DailyBackupFunctions("D:/CentOS_FilesPathTest/ConfigJsonFile.json")
+coreFunctions = DailyBackupFunctions("D:/AllDocuments/Desktop/RnD/Centos_DailyBackup/sysconfig/ConfigJsonFile.json")
