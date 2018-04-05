@@ -51,7 +51,7 @@ class DailyBackupFunctions:
         if sys.platform != "win32":
             crontabPath = "/etc/crontab"
             
-            crontab_file = open(crontab_file, 'r')
+            crontab_file = open(crontabPath, 'r')
             #relations = []
             
             for line in crontab_file:
