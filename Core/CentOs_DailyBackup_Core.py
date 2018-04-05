@@ -54,7 +54,7 @@ class DailyBackupFunctions:
             crontab_file = open(crontab_file, 'r')
             #relations = []
             
-            for line in crontab:
+            for line in crontab_file:
                 #relations.append(str(line))
                 print line
             relations_file.close()
