@@ -111,7 +111,9 @@ if __name__ == "__main__":
     pathJson = ""
     if sys.platform == "win32":
         pathJson = "D:/AllDocuments/Desktop/RnD/Centos_DailyBackup/sysconfig/ConfigJsonFile.json"
+        print "Windows"
     else:
         pathJson = "/media/Storage/MASTER/RnD/SystemTools/Centos_DailyBackup/sysconfig/ConfigJsonFile.json"
+        print "Linux"
 
     coreFunctions = DailyBackupFunctions (pathJson)
