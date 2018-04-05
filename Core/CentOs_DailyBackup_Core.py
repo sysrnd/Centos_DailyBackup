@@ -46,6 +46,29 @@ class DailyBackupFunctions:
         with open(jsonFilePath, 'w') as outfile:
             json.dump(data, outfile, indent = 4, sort_keys = True)
 
+
+        # Modificacion del cron solo si esta en linux
+        if sys.platform != "win32":
+            crontabPath = "/etc/crontab"
+            
+            crontab_file = open(crontab_file, 'r')
+            #relations = []
+            
+            for line in crontab:
+                #relations.append(str(line))
+                print line
+            relations_file.close()
+
+            """
+
+            nfileo=open(pth1+'.txt','w')
+
+            nfileo.write(archivo)
+            nfileo.close()
+
+            """
+
+
     def ReadConfigFile(self, jsonFilePath):
         self.data_loaded = []
         with open(jsonFilePath) as data_file:
@@ -84,4 +107,11 @@ class DailyBackupFunctions:
                     copy2(source, destination)
 
 
-coreFunctions = DailyBackupFunctions("D:/AllDocuments/Desktop/RnD/Centos_DailyBackup/sysconfig/ConfigJsonFile.json")
+if __name__ == "__main__":
+    pathJson = ""
+    if sys.platform == "win32":
+        pathJson = "D:/AllDocuments/Desktop/RnD/Centos_DailyBackup/sysconfig/ConfigJsonFile.json"
+    else:
+        pathJson = "/media/Storage/MASTER/RnD/SystemTools/Centos_DailyBackup/sysconfig/ConfigJsonFile.json"
+
+    coreFunctions = DailyBackupFunctions (pathJson)
