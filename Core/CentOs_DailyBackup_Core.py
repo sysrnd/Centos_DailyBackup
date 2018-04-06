@@ -144,12 +144,11 @@ if __name__ == "__main__":
         #
         #  LINUX
         #
-        pathJson = "/media/Storage/MASTER/RnD/SystemTools/Centos_DailyBackup/sysconfig/ConfigJsonFile.json"
-        dPath = "/media/Storage/MASTER/MKF_MotionGraphics"
-        backPath = "/run/media/soporte/Respaldo/MASTER/MKF_MotionGraphics"
 
-        dPath = "/media/Storage/MASTER/RnD/Sandbox/Fidel"
-        backPath = "/run/media/soporte/Respaldo/MASTER/RnD/Sandbox/Fidel"
+        ruta = "MASTER_RENDER/images"
+        pathJson = "/media/Storage/MASTER/RnD/SystemTools/Centos_DailyBackup/sysconfig/ConfigJsonFile.json"
+        dPath = "/media/Storage/MASTER/" + ruta
+        backPath = "/run/media/soporte/Respaldo/MASTER/" + ruta
 
     coreFunctions = DailyBackupFunctions (pathJson)
 
