@@ -1,5 +1,5 @@
 {
-    "BackupPath": "D:/CentOS_FilesPathTest/BackUpFolder", 
-    "DataPath": "D:/CentOS_FilesPathTest/CurrentFolder", 
-    "Days to purge": 5
+    "BackupPath": "/run/media/soporte/Respaldo/MASTER/RnD/Sandbox/Fidel", 
+    "DataPath": "/media/Storage/MASTER/RnD/Sandbox/Fidel", 
+    "Frequency": 5
 }
