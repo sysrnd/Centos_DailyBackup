@@ -1,0 +1,36 @@
+**  pyqt4_to_pyqt5.log  Monday 09. April 2018 19:11  **
+Args: ['C:\\Python27\\Lib\\site-packages\\PyQt4\\pyqt4topyqt5-master\\pyqt4topyqt5.py', 'DailyBackup_MainUI_v002_PyQt4.py', '-o', 'DailyBackup_MainUI_v002_PyQt5.py']
+
+Processing file: `Z:\RnD\SystemTools\Centos_DailyBackup\UI_Centos_DailiBackup\Resources\DailyBackup_MainUI_v002_PyQt4.py`
+**  pyqt4_to_pyqt5.log  Monday 09. April 2018 19:13  **
+Args: ['C:\\Python27\\Lib\\site-packages\\PyQt4\\pyqt4topyqt5-master\\pyqt4topyqt5.py', 'DailyBackup_SettingsUI_v001_PyQt4.py', '-o', 'DailyBackup_SettingsUI_v001_PyQt5.py']
+
+Processing file: `Z:\RnD\SystemTools\Centos_DailyBackup\UI_Centos_DailiBackup\Resources\DailyBackup_SettingsUI_v001_PyQt4.py`
+**  pyqt4_to_pyqt5.log  Monday 09. April 2018 19:18  **
+Args: ['C:\\Python27\\Lib\\site-packages\\PyQt4\\pyqt4topyqt5-master\\pyqt4topyqt5.py', 'DailyBackup_SettingsUI_v001_PyQt4.py', '-o', 'DailyBackup_SettingsUI_v001_PyQt5.py']
+
+Processing file: `Z:\RnD\SystemTools\Centos_DailyBackup\UI_Centos_DailiBackup\Resources\DailyBackup_SettingsUI_v001_PyQt4.py`
+  File updated.
+
+**  pyqt4_to_pyqt5.log  Monday 09. April 2018 19:20  **
+Args: ['C:\\Python27\\Lib\\site-packages\\PyQt4\\pyqt4topyqt5-master\\pyqt4topyqt5.py', 'DailyBackup_MainUI_v002_PyQt4.py', '-o', 'DailyBackup_MainUI_v002_PyQt5.py']
+
+Processing file: `Z:\RnD\SystemTools\Centos_DailyBackup\UI_Centos_DailiBackup\Resources\DailyBackup_MainUI_v002_PyQt4.py`
+  File updated.
+
+**  pyqt4_to_pyqt5.log  Tuesday 10. April 2018 13:56  **
+Args: ['C:\\Python27\\Lib\\site-packages\\PyQt4\\pyqt4topyqt5-master\\pyqt4topyqt5.py', 'DailyBackup_SettingsUI_v001_PyQt4.py', '-o', 'DailyBackup_SettingsUI_v001_PyQt5.py']
+
+Processing file: `Z:\RnD\SystemTools\Centos_DailyBackup\UI_Centos_DailyBackup\Resources\DailyBackup_SettingsUI_v001_PyQt4.py`
+  File updated.
+
+**  pyqt4_to_pyqt5.log  Wednesday 11. April 2018 16:57  **
+Args: ['C:\\Python27\\Lib\\site-packages\\PyQt4\\pyqt4topyqt5-master\\pyqt4topyqt5.py', 'DailyBackup_SettingsUI_v002_PyQt4.py', '-o', 'DailyBackup_SettingsUI_v002_PyQt5.py']
+
+Processing file: `Z:\RnD\SystemTools\Centos_DailyBackup\UI_Centos_DailyBackup\Resources\DailyBackup_SettingsUI_v002_PyQt4.py`
+**  pyqt4_to_pyqt5.log  Wednesday 11. April 2018 16:59  **
+Args: ['C:\\Python27\\Lib\\site-packages\\PyQt4\\pyqt4topyqt5-master\\pyqt4topyqt5.py', 'DailyBackup_SettingsUI_v002_PyQt4.py', '-o', 'DailyBackup_SettingsUI_v002_PyQt5.py']
+
+Processing file: `Z:\RnD\SystemTools\Centos_DailyBackup\UI_Centos_DailyBackup\Resources\DailyBackup_SettingsUI_v002_PyQt4.py`
+  File updated.
+

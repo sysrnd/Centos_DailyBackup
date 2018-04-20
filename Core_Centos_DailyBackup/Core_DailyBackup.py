@@ -9,14 +9,10 @@ from shutil import ignore_patterns
 from shutil import rmtree
 from shutil import copy2
 
-
-
 """
 if sys.platform == WINDOWS:
     print "Holis estoy en windows"
 """
-
-
 
 class DailyBackupFunctions:
 
@@ -25,24 +21,18 @@ class DailyBackupFunctions:
         """
         self.DataPathKey = 'DataPath'
         self.BackupPathKey = 'BackupPath'
-        self.Frequency = 'Frequency'
+        self.Frequency = 'Frequency_days'
+        self.TimeHour = 'Hour_time'
+        self.TimeMin = 'Min_time'
         self.JsonFile = pathToConfigFile
 
-    def SaveConfigFile(self, dataPath, backupPath):
+    def SaveConfigFile(self, dataX):
         """
         """
-        #dataPath = 'D:/CentOS_FilesPathTest/CurrentFolder'
-        #backupPath = 'D:/CentOS_FilesPathTest/BackUpFolder'
-
-        data = {
-            self.Frequency: 5,
-            self.DataPathKey: dataPath,
-            self.BackupPathKey: backupPath
-            }
+        data = dataX
 
         with open(self.JsonFile, 'w') as outfile:
             json.dump(data, outfile, indent = 4, sort_keys = True)
-
 
         # Modificacion del cron solo si esta en linux
         if sys.platform != "win32":
@@ -83,6 +73,23 @@ class DailyBackupFunctions:
             nfileo.write(todoTexti)
             nfileo.close()
             """
+        else:          
+            # Minuto hora diaMes mes diaSemana
+            header = "# # # # # # # # # #\n#  CentOs Backup  #\n"
+            header = header + "# # # # # # # # # # \n"
+
+            cronTime = "30 2 * * * "
+            # Lineas principales donde se configura la regularidad del respaldo
+
+            cronTime = dataX[self.TimeHour]+ " " + dataX[self.TimeMin] +" */" + dataX[self.Frequency] + " * * "
+            cronLine = "python /media/Storage/MASTER/RnD/"
+            cronLine = cronLine + "SystemTools/Centos_DailyBackup/Core/"
+            cronLine = cronLine + "CentOs_DailyBackup_Core.py\n"
+
+            ender  = "# # # # # # # # # # # #\n#  CentOs Backup End  #\n"
+            ender = ender + "# # # # # # # # # # # #\n"
+
+            print header + cronTime + cronLine+ ender 
 
 
     def ReadConfigFile(self):
@@ -93,12 +100,29 @@ class DailyBackupFunctions:
     def CopyFiles(self):
         source =  self.data_loaded[self.DataPathKey]
         destination = self.data_loaded[self.BackupPathKey]
-        self.copyTree_F(source = source, destination = destination)
+
+        if source.count("Z:/") == 0 and destination.count("Z:/") == 0:
+            self.copyTree_F(source = source, destination = destination)
+            print "Copiado terminado"
 
 
     def DeleteFiles(self):
         """
         """
+        enable = False
+
+        sysPath = "/media/Storage/MASTER/"
+
+        if sys.platform == "win32":
+            sysPath = "Z:/"
+
+        finalFolder = sysPath + "A_Borrar"
+        if enable:
+            # Delete
+            "Delete"
+        else:
+            print finalFolder
+
 
     def copyTree_F(self,source, destination):
         if os.path.isdir(source):
@@ -155,4 +179,3 @@ if __name__ == "__main__":
     coreFunctions.SaveConfigFile(dataPath = dPath, backupPath = backPath)
     coreFunctions.ReadConfigFile()
     coreFunctions.CopyFiles()
-    print "Termine papi"

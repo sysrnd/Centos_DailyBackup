@@ -1,0 +1,12 @@
+**  pyqt4_to_pyqt5.log  Wednesday 11. April 2018 17:07  **
+Args: ['C:\\Python27\\Lib\\site-packages\\PyQt4\\pyqt4topyqt5-master\\pyqt4topyqt5.py', 'Bridge_DailyBackup.py', '-o', 'Bridge_DailyBackup_PyQt5.py']
+
+Processing file: `Z:\RnD\SystemTools\Centos_DailyBackup\UI_Centos_DailyBackup\Bridge_DailyBackup.py`
+  File updated.
+
+**  pyqt4_to_pyqt5.log  Wednesday 11. April 2018 17:10  **
+Args: ['C:\\Python27\\Lib\\site-packages\\PyQt4\\pyqt4topyqt5-master\\pyqt4topyqt5.py', 'Bridge_DailyBackup.py', '-o', 'Bridge_DailyBackup_PyQt5.py']
+
+Processing file: `Z:\RnD\SystemTools\Centos_DailyBackup\UI_Centos_DailyBackup\Bridge_DailyBackup.py`
+  No changes needed.
+

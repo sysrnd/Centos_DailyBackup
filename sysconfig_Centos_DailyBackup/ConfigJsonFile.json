@@ -1,0 +1,7 @@
+{
+    "BackupPath": "Z:/RnD/SystemTools/Centos_DailyBackup/UI_Centos_DailyBackup", 
+    "DataPath": "Z:/RnD/SystemTools/Centos_DailyBackup/sysconfig_Centos_DailyBackup", 
+    "Frequency_days": "4", 
+    "Hour_time": "35", 
+    "Min_time": "03"
+}
