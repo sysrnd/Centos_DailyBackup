@@ -21,6 +21,8 @@ class Bridge_CentOs_DailyBackup(object):
         # Prograss bar
         self.main_proBar_progress = mainWindow.proBar_Progress
 
+        self.main_lbl_feedback = mainWindow.lbl_feedback 
+
         # Config window
         self.set_tEdit_backupTime = configWindow.timeEdit_BackupTime
         self.set_sbBox_frequency = configWindow.snBox_frequency
@@ -33,6 +35,7 @@ class Bridge_CentOs_DailyBackup(object):
 
         # Connecting Main Window
         self.main_btn_config.clicked.connect(self.OpenConfig)
+        self.main_btn_backup.clicked.connect(self.Backup)
 
         # Connecting config window
         self.set_btn_sourcePath.clicked.connect(self.winSource)
@@ -55,11 +58,20 @@ class Bridge_CentOs_DailyBackup(object):
         name = unicode (QtGui.QFileDialog.getExistingDirectory(caption= title))
         return name
 
-        
 
     def PopulateUI(self):
         """
         """
+
+    def Backup(self):
+        self.main_lbl_feedback.setText("Respaldando")
+        self.main_proBar_progress.setValue(10)
+        self.coreActions.ReadConfigFile()
+        self.coreActions.CopyFiles(lbl_feedback = self.main_lbl_feedback)
+        self.main_proBar_progress.setValue(100)
+        print "Respaldo completado"
+
+
 
     def SaveConfig(self):
         dataP = self.set_lEdit_source.text()
@@ -83,6 +95,7 @@ class Bridge_CentOs_DailyBackup(object):
             }
 
         self.coreActions.SaveConfigFile(dataX = data)
+        self.main_lbl_feedback.setText(data[self.coreActions.DataPathKey])
 
     def OpenConfig(self):
         self.configWindow.show()

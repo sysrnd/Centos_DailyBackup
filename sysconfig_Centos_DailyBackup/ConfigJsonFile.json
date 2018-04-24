@@ -1,7 +1,7 @@
 {
-    "BackupPath": "Z:/RnD/SystemTools/Centos_DailyBackup/UI_Centos_DailyBackup", 
-    "DataPath": "Z:/RnD/SystemTools/Centos_DailyBackup/sysconfig_Centos_DailyBackup", 
-    "Frequency_days": "4", 
-    "Hour_time": "35", 
-    "Min_time": "03"
+    "BackupPath": "/run/media/soporte/Respaldo/MASTER/MKF_animacion/MEXICARTOONS", 
+    "DataPath": "/media/Storage/MASTER/MKF_animacion/MEXICARTOONS", 
+    "Frequency_days": "1", 
+    "Hour_time": "30", 
+    "Min_time": "02"
 }

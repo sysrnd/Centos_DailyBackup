@@ -1,7 +1,10 @@
 import sys
 
-sys.path.append("Z:/RnD/Pipeline/Maya/Scripts")
-sys.path.append("Z:/RnD/SystemTools/Centos_DailyBackup")
+envPath = "Z:/"
+if sys.platform != "win32":
+    envPath = "/media/Storage/MASTER"
+
+sys.path.append(envPath + "/RnD/SystemTools/Centos_DailyBackup")
 
 #from Modules.Qt import QtCore, QtGui, QtWidgets
 from PyQt4 import QtCore, QtGui

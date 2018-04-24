@@ -97,12 +97,15 @@ class DailyBackupFunctions:
         with open(self.JsonFile) as data_file:
             self.data_loaded = json.load(data_file)
 
-    def CopyFiles(self):
+    def CopyFiles(self, lbl_feedback = None):
         source =  self.data_loaded[self.DataPathKey]
         destination = self.data_loaded[self.BackupPathKey]
 
+        print source
+        print destination
+
         if source.count("Z:/") == 0 and destination.count("Z:/") == 0:
-            self.copyTree_F(source = source, destination = destination)
+            self.copyTree_F(source = source, destination = destination, lbl_feedback = lbl_feedback)
             print "Copiado terminado"
 
 
@@ -124,7 +127,7 @@ class DailyBackupFunctions:
             print finalFolder
 
 
-    def copyTree_F(self,source, destination):
+    def copyTree_F(self,source, destination, lbl_feedback = None):
         if os.path.isdir(source):
             try:
                 copytree(source, destination, ignore=ignore_patterns("*.pyc","*.tmp"))
@@ -148,6 +151,8 @@ class DailyBackupFunctions:
 
                 if (d_modTime != o_modTime):
                     copy2(unicode(source), unicode(destination))
+                    if lbl_feedback != None:
+                        lbl_feedback.setText(source)
 
 
 if __name__ == "__main__":
@@ -156,26 +161,16 @@ if __name__ == "__main__":
     dPath = ""
     backPath = ""
 
-    if sys.platform == "win32":
-        #
-        #   WINDOWS
-        #
-        pathJson = "D:/AllDocuments/Desktop/RnD/Centos_DailyBackup/sysconfig/ConfigJsonFile.json"
-        dPath = "D:/CentOS_FilesPathTest/CurrentFolder"
-        backPath = "D:/CentOS_FilesPathTest/BackUpFolder"
-        
-    else:
-        #
+    if sys.platform != "win32":
         #  LINUX
-        #
 
-        ruta = "MASTER_RENDER/images"
-        pathJson = "/media/Storage/MASTER/RnD/SystemTools/Centos_DailyBackup/sysconfig/ConfigJsonFile.json"
+        ruta = "MKF_animacion/CAMPANAS 2018"
+        pathJson = "/media/Storage/MASTER/RnD/SystemTools/Centos_DailyBackup/sysconfig_Centos_DailyBackup/ConfigJsonFile.json"
         dPath = "/media/Storage/MASTER/" + ruta
         backPath = "/run/media/soporte/Respaldo/MASTER/" + ruta
 
     coreFunctions = DailyBackupFunctions (pathJson)
 
-    coreFunctions.SaveConfigFile(dataPath = dPath, backupPath = backPath)
+    #coreFunctions.SaveConfigFile(dataPath = dPath, backupPath = backPath)
     coreFunctions.ReadConfigFile()
     coreFunctions.CopyFiles()
